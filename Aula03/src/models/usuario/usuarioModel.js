@@ -8,10 +8,10 @@ export class UsuarioModel{
     static buscarPorId(id){
         return usuarios.find(u => u.id === parseInt(id));
     }
-
+    
     static criarUsuario(nome, email, fone){
         const novoUsuario = {
-            id: id,
+            id: usuarios.length +1,
             nome: nome,
             email: email,
             fone: fone,
@@ -37,6 +37,10 @@ export class UsuarioModel{
         }
         usuarios.splice(index, 1);
         return true;
+    }
+
+    static buscarPorEmail(email){
+        return usuarios.find(u => u.email === email);
     }
 
 }

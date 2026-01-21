@@ -3,6 +3,8 @@ import usuarioRoutes from "./src/routes/usuario/usuarioRoutes.js";
 const app = express();
 const PORT = 3000;
 
+app.use(express.json());
+
 app.use("/usuarios", usuarioRoutes);
 
 app.get("/", (req, res)=>{
